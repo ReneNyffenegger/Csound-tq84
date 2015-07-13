@@ -8,3 +8,5 @@
 ## Links
 
 http://www.csounds.com/manual/html/PartReference.html
+
+https://github.com/kroger/csound-instruments/tree/master/csound-manual
