@@ -4,6 +4,8 @@
 ;
 ;     cps2pch seems to be more precise.
 ;
+;   See also cpspch.svg
+;
 
 <CsoundSynthesizer>
   

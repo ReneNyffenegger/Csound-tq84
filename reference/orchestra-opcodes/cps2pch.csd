@@ -1,6 +1,8 @@
 ;
 ;   Compare with cpspch
 ;
+;   See also cpspch.svg
+;
 
 <CsoundSynthesizer>
   
