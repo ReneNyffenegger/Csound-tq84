@@ -1,0 +1,184 @@
+.
+├── command_line_opts.html
+├── compositions
+│   ├── 001.html                                copied to github - TODO: copy comments
+│   ├── 002.html                                copied to github - TODO: copy comments
+│   ├── 003.html                                copied to github - TODO: copy comments
+│   ├── 004.html                                copied to github - TODO: copy comments
+│   ├── 005.html                                copied to github - TODO: copy comments
+│   └── index.html                              nothing todo
+├── cs.html                                     TODO: is now the shell script snd. to be checked in in the lib directory
+├── csoundvst.html
+├── dx7
+│   ├── algorithms.html                         Only graphics on DX7 algorithms. Still needed. 
+│   ├── convert_patches.html                    copied to ../dx7/www.parnasse.com/dx72csnd.zip/bigdx7.zip/convert_patches.sh -- TODO: run the script again, it produces errors.
+│   └── index.html                              Notes on dx7 emulation with csound. Still needed
+├── effects
+│   ├── fdn_reverberator.html                   No score file?
+│   ├── filtered_saw.html                       Seen at http://www.cs.bath.ac.uk/pub/dream/documentation/orchestras+scores/compositions/mariano/vestigeo/
+│   └── schroeders_reverberator.html            No score file?
+├── env_vars.html
+├── filters.html                                TODO: keep information
+├── fm
+│   ├── bell.html
+│   ├── index.html                              TODO
+├── func_table.html                             TODO Keep info
+├── granular
+│   └── index.html
+├── index.html
+├── instruments
+│   ├── gong.html                               References http://www.adp-gmbh.ch/csound/templates/envelope.html
+│   ├── index.html
+│   ├── snare.html                              No score?
+├── instrument_types.html
+├── misc.html
+├── n_order_filter.jpg
+├── opcodes
+│   ├── abs.html
+│   ├── adsr.html
+│   ├── adsr.jpg
+│   ├── a.html
+│   ├── alpass.html
+│   ├── ampdb.html
+│   ├── areson.html
+│   ├── atone.html
+│   ├── balance.html
+│   ├── butterbp.html
+│   ├── butterbp.jpg
+│   ├── butterbr.html
+│   ├── butterhp.html
+│   ├── butterlp.html
+│   ├── buzz.html
+│   ├── cabasa.html
+│   ├── cabasa.jpg
+│   ├── comb.html
+│   ├── cpsoct.html
+│   ├── cpspch.html
+│   ├── crunch.html
+│   ├── crunch.jpg
+│   ├── dcblock.html
+│   ├── delay.html
+│   ├── delay.jpg
+│   ├── delayr.html
+│   ├── delayw.html
+│   ├── deltap.html
+│   ├── diff.gif
+│   ├── diff.html
+│   ├── downsamp.html
+│   ├── expon.html
+│   ├── expon.jpg
+│   ├── expseg.html
+│   ├── expseg.jpg
+│   ├── f2.jpg
+│   ├── f8.jpg
+│   ├── f.html
+│   ├── fof.html
+│   ├── fog.html
+│   ├── foscil.html
+│   ├── foscili.html
+│   ├── ftgen.html
+│   ├── ftlen.html
+│   ├── ftmorph.html
+│   ├── goto.html
+│   ├── grain.html
+│   ├── granule.html
+│   ├── hrtfer.html
+│   ├── if.html
+│   ├── igoto.html
+│   ├── ihold.html
+│   ├── index.html
+│   ├── init.html
+│   ├── integ.html
+│   ├── interp.html
+│   ├── kgoto.html
+│   ├── kr.html
+│   ├── limit.html
+│   ├── line.html
+│   ├── linen.html
+│   ├── linseg.html
+│   ├── log.html
+│   ├── lowpass2.html
+│   ├── lowres.html
+│   ├── lowresx.html
+│   ├── moogvcf.html
+│   ├── mpulse.html
+│   ├── nchnls.html
+│   ├── nlfilt_formula.gif
+│   ├── nlfilt.html
+│   ├── opcode.html
+│   ├── oscil.html
+│   ├── oscili.html
+│   ├── out.html
+│   ├── outs.html
+│   ├── pareq.html
+│   ├── phasor.html
+│   ├── phasor.jpg
+│   ├── pluck.html
+│   ├── port.html
+│   ├── portk.html
+│   ├── poscil.html
+│   ├── pow.html
+│   ├── pow.jpg
+│   ├── randh.html
+│   ├── rand.html
+│   ├── randi.html
+│   ├── random.html
+│   ├── reson.html
+│   ├── resonk.html
+│   ├── resonr.html
+│   ├── resonx.html
+│   ├── resonz.html
+│   ├── reverb.html
+│   ├── rezzy.html
+│   ├── rms.html
+│   ├── rnd32.html
+│   ├── rnd.html
+│   ├── samphold.html
+│   ├── sandpaper.html
+│   ├── sandpaper.jpg
+│   ├── sekere.html
+│   ├── sekere.jpg
+│   ├── spat3di.html
+│   ├── sqrt.html
+│   ├── sr.html
+│   ├── stix.html
+│   ├── stix.jpg
+│   ├── svfilter.html
+│   ├── table.html
+│   ├── tablei.html
+│   ├── tablei.jpg
+│   ├── t.html
+│   ├── tigoto.html
+│   ├── timout.html
+│   ├── tone.html
+│   ├── tone.jpg
+│   ├── tonek.html
+│   ├── tonex.html
+│   ├── turnoff.html
+│   ├── unirand.html
+│   ├── upsamp.html
+│   ├── vco.html
+│   ├── vdelay.html
+│   ├── vdelay.jpg
+│   └── vlowres.html
+├── rate_demo1.jpg
+├── rate_demo2.jpg
+├── score_preprocessing.html
+├── sound_theory.html
+├── src_5
+│   └── index.html
+├── synth_secret.html
+├── templates
+│   ├── envelope.html                         TODO: Referenced by instruments/gong.html // copied but still has valuable text
+│   ├── freq_in_table.html                    TODO: Referenced by rand_note
+│   ├── index.html
+│   ├── rand_note.html                        TODO: References freq_in_table
+├── tools
+│   ├── index.html
+│   └── pvanal.html
+├── variables.html
+├── waveshaping
+│   ├── index.html
+└── zeroes_and_poles.jpg
+
+13 directories, 213 files
