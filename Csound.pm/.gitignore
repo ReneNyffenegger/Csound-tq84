@@ -1,0 +1,6 @@
+#
+# .sco and .orc files can be exluded - they are
+# produced by Csound.pm
+#
+*.sco
+*.orc
