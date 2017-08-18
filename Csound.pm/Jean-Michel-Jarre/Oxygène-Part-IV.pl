@@ -10,10 +10,11 @@ use Csound::Instrument;
 use Csound::Composition;
 
 my $composition = Csound::Composition->new();
+my $tempo       = $composition->t(30);
 
 # my $score = Csound::Score->new();
 
-my $bass = Csound::Instrument->new({
+my $bass = Csound::Instrument->new({ #_{
   composition=>$composition,
   definition =>'
 
@@ -23,9 +24,9 @@ my $bass = Csound::Instrument->new({
 ;                                                       1  2    3    4    5    6     7     8    9    10   11    12    13    14    15    16
   asig oscili kenv*15000, i_freq, @FUNCTABLE(10, 16384, 1, 0.9, 0.2, 0.8, 0.1, 0.05, 0.01, 0.6, 0.1, 0.2, 0.06, 0.15, 0.04, 0.03, 0.02, 0.3 )
   outs asig, asig
-'});
+'}); #_}
 
-my $melody_1 = Csound::Instrument->new({
+my $melody_1 = Csound::Instrument->new({ #_{
   composition=>$composition,  
   definition=>'
   kenv adsr p3*.01, p3*.39, .4, p3*.3
@@ -33,9 +34,9 @@ my $melody_1 = Csound::Instrument->new({
 ; asig foscili kenv*15000, i_freq, 1, 1.2, 4, @FUNCTABLE(10, 16384, 1)
   asig oscili kenv*15000, i_freq, @FUNCTABLE(10, 16384, 1, 0.9, 0.2, 0.8, 0.1, 0.05, 0.01, 0.6, 0.1, 0.2, 0.06, 0.15, 0.04, 0.03, 0.02, 0.3 )
   outs asig, asig
-'});
+'}); #_}
 
-my $melody_2 = Csound::Instrument->new({
+my $melody_2 = Csound::Instrument->new({ #_{
   composition=>$composition,
   definition=>'
   kenv adsr p3*.01, p3*.39, .4, p3*.3
@@ -43,16 +44,16 @@ my $melody_2 = Csound::Instrument->new({
   asig foscili kenv*15000, i_freq, 1, 2.2, 4, @FUNCTABLE(10, 16384, 1)
 ; asig oscili kenv*15000, i_freq, @FUNCTABLE(10, 16384, 1, 0.9, 0.2, 0.8, 0.1, 0.05, 0.01, 0.6, 0.1, 0.2, 0.06, 0.15, 0.04, 0.03, 0.02, 0.3 )
   outs asig, asig
-'});
+'}); #_}
 
-my $melody_3 = Csound::Instrument->new({
+my $melody_3 = Csound::Instrument->new({ #_{
   composition=>$composition,
   definition=>'
   kenv adsr p3*.01, p3*.39, .4, p3*.3
 
   asig foscili kenv*15000, i_freq, 1, 1.8, 3, @FUNCTABLE(10, 16384, 1)
   outs asig, asig
-'});
+'}); #_}
 
 my
 $t = intro();
@@ -124,54 +125,47 @@ sub bass_cm { #_{
 
   my $t0 = shift;
 
-  my $t = $t0;
-
-  my $l = 2;
+  my $t = 0; # $t0;
 
   my
-  $len = 2/12 *$l; $bass->play($t0 + $t, $len, 'c5' ); $t += $len;
-  $len = 1/12 *$l; $bass->play($t0 + $t, $len, 'c5' ); $t += $len;
-  $len = 2/12 *$l; $bass->play($t0 + $t, $len, 'b♭4'); $t += $len;
-  $len = 3/12 *$l; $bass->play($t0 + $t, $len, 'c5' ); $t += $len;
-  $len = 1/12 *$l; $bass->play($t0 + $t, $len, 'g4' ); $t += $len;
-  $len = 2/12 *$l; $bass->play($t0 + $t, $len, 'b♭4'); $t += $len;
-  $len = 1/12 *$l; $bass->play($t0 + $t, $len, 'g4' ); $t += $len;
+  $len = 2/12; $bass->play($t0 + $t, $len, 'c5' ); $t += $len;
+  $len = 1/12; $bass->play($t0 + $t, $len, 'c5' ); $t += $len;
+  $len = 2/12; $bass->play($t0 + $t, $len, 'b♭4'); $t += $len;
+  $len = 3/12; $bass->play($t0 + $t, $len, 'c5' ); $t += $len;
+  $len = 1/12; $bass->play($t0 + $t, $len, 'g4' ); $t += $len;
+  $len = 2/12; $bass->play($t0 + $t, $len, 'b♭4'); $t += $len;
+  $len = 1/12; $bass->play($t0 + $t, $len, 'g4' ); $t += $len;
 
 } #_}
 sub bass_gm { #_{
 
   my $t0 = shift;
 
-
-  my $t = $t0;
-
-  my $l = 2;
+  my $t = 0; # $t0;
 
   my
-  $len = 2/12 *$l; $bass->play($t0 + $t, $len, 'd5' ); $t += $len;
-  $len = 1/12 *$l; $bass->play($t0 + $t, $len, 'd5' ); $t += $len;
-  $len = 2/12 *$l; $bass->play($t0 + $t, $len, 'c5' ); $t += $len;
-  $len = 4/12 *$l; $bass->play($t0 + $t, $len, 'd5' ); $t += $len;
-  $len = 2/12 *$l; $bass->play($t0 + $t, $len, 'b♭4'); $t += $len;
-  $len = 1/12 *$l; $bass->play($t0 + $t, $len, 'g4' ); $t += $len;
+  $len = 2/12; $bass->play($t0 + $t, $len, 'd5' ); $t += $len;
+  $len = 1/12; $bass->play($t0 + $t, $len, 'd5' ); $t += $len;
+  $len = 2/12; $bass->play($t0 + $t, $len, 'c5' ); $t += $len;
+  $len = 4/12; $bass->play($t0 + $t, $len, 'd5' ); $t += $len;
+  $len = 2/12; $bass->play($t0 + $t, $len, 'b♭4'); $t += $len;
+  $len = 1/12; $bass->play($t0 + $t, $len, 'g4' ); $t += $len;
 
 } #_}
 sub bass_f  { #_{
 
   my $t0 = shift;
 
-  my $t = $t0;
-
-  my $l = 2;
+  my $t = 0; # $t0;
 
   my
-  $len = 2/12 *$l; $bass->play($t0 + $t, $len, 'f5' ); $t += $len;
-  $len = 1/12 *$l; $bass->play($t0 + $t, $len, 'f5' ); $t += $len;
-  $len = 2/12 *$l; $bass->play($t0 + $t, $len, 'e♭5'); $t += $len;
-  $len = 3/12 *$l; $bass->play($t0 + $t, $len, 'c5' ); $t += $len;
-  $len = 1/12 *$l; $bass->play($t0 + $t, $len, 'f5' ); $t += $len;
-  $len = 2/12 *$l; $bass->play($t0 + $t, $len, 'e♭5'); $t += $len;
-  $len = 1/12 *$l; $bass->play($t0 + $t, $len, 'c5' ); $t += $len;
+  $len = 2/12; $bass->play($t0 + $t, $len, 'f5' ); $t += $len;
+  $len = 1/12; $bass->play($t0 + $t, $len, 'f5' ); $t += $len;
+  $len = 2/12; $bass->play($t0 + $t, $len, 'e♭5'); $t += $len;
+  $len = 3/12; $bass->play($t0 + $t, $len, 'c5' ); $t += $len;
+  $len = 1/12; $bass->play($t0 + $t, $len, 'f5' ); $t += $len;
+  $len = 2/12; $bass->play($t0 + $t, $len, 'e♭5'); $t += $len;
+  $len = 1/12; $bass->play($t0 + $t, $len, 'c5' ); $t += $len;
 
 } #_}
 
@@ -181,16 +175,14 @@ sub melody_cm { #_{
   bass_cm($t0  );
   bass_cm($t0+1);
 
-  my $t  = $t0;
-
-  my $l = 2;
+  my $t  = 0; # $t0;
 
   my
-  $len = 5/12 * $l; $melody_1->play($t0+$t, $len, 'c7' ); $t += $len;
-  $len = 1/12 * $l; $melody_1->play($t0+$t, $len, 'g6' ); $t += $len;
-  $len = 2/12 * $l; $melody_1->play($t0+$t, $len, 'e♭6'); $t += $len;
-  $len = 3/12 * $l; $melody_1->play($t0+$t, $len, 'g6' ); $t += $len;
-  $len =13/12 * $l; $melody_1->play($t0+$t, $len, 'c6' ); $t += $len;
+  $len = 5/12; $melody_1->play($t0+$t, $len, 'c7' ); $t += $len;
+  $len = 1/12; $melody_1->play($t0+$t, $len, 'g6' ); $t += $len;
+  $len = 2/12; $melody_1->play($t0+$t, $len, 'e♭6'); $t += $len;
+  $len = 3/12; $melody_1->play($t0+$t, $len, 'g6' ); $t += $len;
+  $len =13/12; $melody_1->play($t0+$t, $len, 'c6' ); $t += $len;
 
   return $t0+2;
 
@@ -201,16 +193,14 @@ sub melody_gm { #_{
   bass_gm($t0  );
   bass_gm($t0+1);
 
-  my $t  = $t0;
-
-  my $l = 2;
+  my $t  = 0; # $t0;
 
   my
-  $len = 5/12 * $l; $melody_1->play($t0+$t, $len, 'b♭6'); $t += $len;
-  $len = 1/12 * $l; $melody_1->play($t0+$t, $len, 'a6' ); $t += $len;
-  $len = 2/12 * $l; $melody_1->play($t0+$t, $len, 'g6' ); $t += $len;
-  $len = 3/12 * $l; $melody_1->play($t0+$t, $len, 'a6' ); $t += $len;
-  $len =13/12 * $l; $melody_1->play($t0+$t, $len, 'd6' ); $t += $len;
+  $len = 5/12; $melody_1->play($t0+$t, $len, 'b♭6'); $t += $len;
+  $len = 1/12; $melody_1->play($t0+$t, $len, 'a6' ); $t += $len;
+  $len = 2/12; $melody_1->play($t0+$t, $len, 'g6' ); $t += $len;
+  $len = 3/12; $melody_1->play($t0+$t, $len, 'a6' ); $t += $len;
+  $len =13/12; $melody_1->play($t0+$t, $len, 'd6' ); $t += $len;
 
   return $t0+2;
 } #_}
@@ -220,20 +210,18 @@ sub melody_f  { #_{
   bass_f($t0  );
   bass_f($t0+1);
 
-  my $t  = $t0;
-
-  my $l = 2;
+  my $t  = 0; # $t0;
 
   my
-  $len = 2/12 * $l; $melody_1->play($t0+$t, $len, 'a6' ); $t += $len;
-  $len = 1/12 * $l; $melody_1->play($t0+$t, $len, 'g6' ); $t += $len;
-  $len = 2/12 * $l; $melody_1->play($t0+$t, $len, 'f6' ); $t += $len;
-  $len = 7/12 * $l; $melody_1->play($t0+$t, $len, 'c6' ); $t += $len;
+  $len = 2/12; $melody_1->play($t0+$t, $len, 'a6' ); $t += $len;
+  $len = 1/12; $melody_1->play($t0+$t, $len, 'g6' ); $t += $len;
+  $len = 2/12; $melody_1->play($t0+$t, $len, 'f6' ); $t += $len;
+  $len = 7/12; $melody_1->play($t0+$t, $len, 'c6' ); $t += $len;
 
-  $len = 2/12 * $l; $melody_1->play($t0+$t, $len, 'a6' ); $t += $len;
-  $len = 1/12 * $l; $melody_1->play($t0+$t, $len, 'g6' ); $t += $len;
-  $len = 2/12 * $l; $melody_1->play($t0+$t, $len, 'f6' ); $t += $len;
-  $len = 7/12 * $l; $melody_1->play($t0+$t, $len, 'c6' ); $t += $len;
+  $len = 2/12; $melody_1->play($t0+$t, $len, 'a6' ); $t += $len;
+  $len = 1/12; $melody_1->play($t0+$t, $len, 'g6' ); $t += $len;
+  $len = 2/12; $melody_1->play($t0+$t, $len, 'f6' ); $t += $len;
+  $len = 7/12; $melody_1->play($t0+$t, $len, 'c6' ); $t += $len;
 
   return $t0+2;
 } #_}
@@ -243,15 +231,13 @@ sub melody_2_cm { #_{
 
   bass_cm($t0  );
 
-  my $t = $t0;
-
-  my $l = 2;
+  my $t = 0; # $t0;
 
   my
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'c7'); $t += $len;
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'g7'); $t += $len;
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'c7'); $t += $len;
-  $len = 9/12 * $l; $melody_2->play($t0+$t, $len, 'g7'); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'c7'); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'g7'); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'c7'); $t += $len;
+  $len = 9/12; $melody_2->play($t0+$t, $len, 'g7'); $t += $len;
 
   return $t0 + 1;
 } #_}
@@ -260,15 +246,13 @@ sub melody_2_gm { #_{
 
   bass_gm($t0  );
 
-  my $t = $t0;
-  my $l = 2;
+  my $t = 0; # $t0;
 
   my
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'd7' ); $t += $len;
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'b♭7'); $t += $len;
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'd7' ); $t += $len;
-  $len = 9/12 * $l; $melody_2->play($t0+$t, $len, 'b♭7'); $t += $len;
-
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'd7' ); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'b♭7'); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'd7' ); $t += $len;
+  $len = 9/12; $melody_2->play($t0+$t, $len, 'b♭7'); $t += $len;
 
   return $t0 + 1;
 } #_}
@@ -277,14 +261,13 @@ sub melody_2_f  { #_{
 
   bass_f($t0  );
 
-  my $t = $t0;
-  my $l = 2;
+  my $t = 0; # $t0;
 
   my
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'f7' ); $t += $len;
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'c8' ); $t += $len;
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'f7' ); $t += $len;
-  $len = 9/12 * $l; $melody_2->play($t0+$t, $len, 'c8' ); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'f7' ); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'c8' ); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'f7' ); $t += $len;
+  $len = 9/12; $melody_2->play($t0+$t, $len, 'c8' ); $t += $len;
 
   return $t0 + 1;
 } #_}
@@ -318,13 +301,12 @@ sub end_part { #_{
     bass_cm($t0);
     bass_cm($t0+1);
 
-    my $l = 2;
     my
-    $len = 5/12 * $l; $melody_3->play($t0+$t, $len, 'c7' ); $t += $len;
-    $len = 1/12 * $l; $melody_3->play($t0+$t, $len, 'g6' ); $t += $len;
-    $len = 2/12 * $l; $melody_3->play($t0+$t, $len, 'e♭6'); $t += $len;
-    $len = 3/12 * $l; $melody_3->play($t0+$t, $len, 'g6' ); $t += $len;
-    $len =13/12 * $l; $melody_3->play($t0+$t, $len, 'c6' ); $t += $len;
+    $len = 5/12; $melody_3->play($t0+$t, $len, 'c7' ); $t += $len;
+    $len = 1/12; $melody_3->play($t0+$t, $len, 'g6' ); $t += $len;
+    $len = 2/12; $melody_3->play($t0+$t, $len, 'e♭6'); $t += $len;
+    $len = 3/12; $melody_3->play($t0+$t, $len, 'g6' ); $t += $len;
+    $len =13/12; $melody_3->play($t0+$t, $len, 'c6' ); $t += $len;
 
     $t = $t0+2;
 
@@ -339,14 +321,13 @@ sub end_cm { #_{
 
   bass_cm($t0);
 
-  my $t = $t0;
-  my $l = 2;
+  my $t = 0;# $t0;
   my
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'e♭7'); $t += $len;
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'd7' ); $t += $len;
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'e♭7'); $t += $len;
-  $len = 2/12 * $l; $melody_2->play($t0+$t, $len, 'c7' ); $t += $len;
-  $len = 7/12 * $l; $melody_2->play($t0+$t, $len, 'g6' ); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'e♭7'); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'd7' ); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'e♭7'); $t += $len;
+  $len = 2/12; $melody_2->play($t0+$t, $len, 'c7' ); $t += $len;
+  $len = 7/12; $melody_2->play($t0+$t, $len, 'g6' ); $t += $len;
 
   return $t0+1;
 
@@ -356,14 +337,13 @@ sub end_gm { #_{
 
   bass_gm($t0);
 
-  my $t = $t0;
-  my $l = 2;
+  my $t = 0;# $t0;
   my
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'b♭6'); $t += $len;
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'a6' ); $t += $len;
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'b♭6'); $t += $len;
-  $len = 2/12 * $l; $melody_2->play($t0+$t, $len, 'g6' ); $t += $len;
-  $len = 7/12 * $l; $melody_2->play($t0+$t, $len, 'd6' ); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'b♭6'); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'a6' ); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'b♭6'); $t += $len;
+  $len = 2/12; $melody_2->play($t0+$t, $len, 'g6' ); $t += $len;
+  $len = 7/12; $melody_2->play($t0+$t, $len, 'd6' ); $t += $len;
 
   return $t0+1;
 
@@ -373,14 +353,13 @@ sub end_f  { #_{
 
   bass_f($t0);
 
-  my $t = $t0;
-  my $l = 2;
+  my $t = 0;# $t0;
   my
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'a6' ); $t += $len;
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'g6' ); $t += $len;
-  $len = 1/12 * $l; $melody_2->play($t0+$t, $len, 'a6' ); $t += $len;
-  $len = 2/12 * $l; $melody_2->play($t0+$t, $len, 'f6' ); $t += $len;
-  $len = 7/12 * $l; $melody_2->play($t0+$t, $len, 'c7' ); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'a6' ); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'g6' ); $t += $len;
+  $len = 1/12; $melody_2->play($t0+$t, $len, 'a6' ); $t += $len;
+  $len = 2/12; $melody_2->play($t0+$t, $len, 'f6' ); $t += $len;
+  $len = 7/12; $melody_2->play($t0+$t, $len, 'c7' ); $t += $len;
 
   return $t0+1;
 
